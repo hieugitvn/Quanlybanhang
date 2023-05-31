@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Microsoft.Win32;
+using System.Data.SqlClient;
 namespace QLBH
 {
     public partial class menu : Form
     {
+        const string cnStr = "Server=LAPTOP-DUYCOP\\SQLEXPRESS;Database=Quanlybanhang;Trusted_Connection=True;";
+        Functions.SqlServer db = new Functions.SqlServer(cnStr);
         public menu()
         {
             InitializeComponent();
@@ -19,7 +22,7 @@ namespace QLBH
 
         private void menu_Load(object sender, EventArgs e)
         {
-            Functions.Connect();
+            //Functions.Connect();
         }
 
         private void tùyChọnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -30,6 +33,18 @@ namespace QLBH
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void thoat_Click(object sender, EventArgs e)
+        {
+            //Functions.Disconnect(); //Đóng kết nối
+            Application.Exit(); //Thoát
+        }
+
+        private void mặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mathang mathang = new mathang(); //Khởi tạo đối tượng
+           mathang.ShowDialog(); //Hiển thị
         }
     }
 }
