@@ -39,9 +39,7 @@
             this.nhânViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhàCungCấpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -95,52 +93,42 @@
             // mặtHàngToolStripMenuItem
             // 
             this.mặtHàngToolStripMenuItem.Name = "mặtHàngToolStripMenuItem";
-            this.mặtHàngToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.mặtHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.mặtHàngToolStripMenuItem.Text = "Mặt hàng";
             this.mặtHàngToolStripMenuItem.Click += new System.EventHandler(this.mặtHàngToolStripMenuItem_Click);
             // 
             // đơnHàngToolStripMenuItem
             // 
             this.đơnHàngToolStripMenuItem.Name = "đơnHàngToolStripMenuItem";
-            this.đơnHàngToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.đơnHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đơnHàngToolStripMenuItem.Text = "Đơn hàng";
             // 
             // kháchHàngToolStripMenuItem
             // 
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
             // 
             // nhânViênToolStripMenuItem
             // 
             this.nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
-            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.nhânViênToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nhânViênToolStripMenuItem.Text = "Nhân Viên";
             // 
             // nhàCungCấpToolStripMenuItem
             // 
             this.nhàCungCấpToolStripMenuItem.Name = "nhàCungCấpToolStripMenuItem";
-            this.nhàCungCấpToolStripMenuItem.Size = new System.Drawing.Size(183, 26);
+            this.nhàCungCấpToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.nhàCungCấpToolStripMenuItem.Text = "Nhà cung cấp";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Location = new System.Drawing.Point(12, 53);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(776, 385);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(222, 169);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // menu
             // 
@@ -155,7 +143,6 @@
             this.Load += new System.EventHandler(this.menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -174,7 +161,6 @@
         private System.Windows.Forms.ToolStripMenuItem nhânViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhàCungCấpToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
     }
 }
 

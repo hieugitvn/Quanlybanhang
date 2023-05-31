@@ -10,46 +10,61 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QLBH
 {
-
-    public partial class mathang : Form
+     public partial class mathang : Form
     {
         public mathang()
         {
             InitializeComponent();
-
         }
-        public Functions.SqlServer db; //để bố truyền sang
+
+        public Functions.SqlServer db;
         public banhang bh;
+
         public DialogResult ShowAdd(Form papa)
         {
-            //this.Icon = Properties.Resources.add_icon;
-             this.Text = "Thêm 1 sv mới";
             button1.Text = "Thêm SV";
-          //  LoadNganh(null);
             return this.ShowDialog(papa);
         }
+
         public DialogResult ShowEdit(Form papa)
         {
-           // this.Icon = Properties.Resources.edit_icon;
-           // this.Text = $"Sửa thông tin sv: {sv.masv} - {sv.hoten}";
             button1.Text = "Cập nhật";
-            //cập nhật các giá trị lên form
             textBox1.Text = bh.mahang;
             textBox2.Text = bh.tenhang;
-           // dateNS.Value = sv.ngaysinh;
-           // if (sv.gt)
-            //    gtNam.Checked = true;
-           // else
-             //   gtNu.Checked = true;
-
-           // LoadNganh(bh.maNganh);
             return this.ShowDialog(papa);
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
+            string maHang = textBox1.Text;
+            string tenHang = textBox2.Text;
+
+            // Lưu giá trị maHang và tenHang vào Tag của các ô nhập liệu
+            textBox1.Tag = maHang;
+            textBox2.Tag = tenHang;
+
             bh = new banhang();
-            bh.mahang  = textBox1.Text;
-            bh.tenhang  = textBox2.Text;
+            bh.mahang = maHang;
+            bh.tenhang = tenHang;
+
+            // Ghi thông tin vào cơ sở dữ liệu
+            string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
+
+            string query = "INSERT INTO mathang (mahang, tenhang) VALUES (@mahang, @tenhang)";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@mahang", maHang);
+                    command.Parameters.AddWithValue("@tenhang", tenHang);
+                    command.ExecuteNonQuery();
+                }
+            }
+
+            MessageBox.Show("Thông tin đã được ghi vào cơ sở dữ liệu.");
         }
 
         private void mathang_Load(object sender, EventArgs e)
