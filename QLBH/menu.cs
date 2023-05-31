@@ -13,7 +13,7 @@ namespace QLBH
 {
     public partial class menu : Form
     {
-        const string cnStr = "Server=LAPTOP-DUYCOP\\SQLEXPRESS;Database=Quanlybanhang;Trusted_Connection=True;";
+        const string cnStr = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
         Functions.SqlServer db = new Functions.SqlServer(cnStr);
         public menu()
         {

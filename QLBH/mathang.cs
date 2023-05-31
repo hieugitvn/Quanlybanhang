@@ -22,26 +22,35 @@ namespace QLBH
 
         public DialogResult ShowAdd(Form papa)
         {
-            button1.Text = "Thêm SV";
+            them.Text = "Thêm SV";
             return this.ShowDialog(papa);
         }
 
         public DialogResult ShowEdit(Form papa)
         {
-            button1.Text = "Cập nhật";
-            textBox1.Text = bh.mahang;
-            textBox2.Text = bh.tenhang;
+            them.Text = "Cập nhật";
+            mahang.Text = bh.mahang;
+            tenhang.Text = bh.tenhang;
+            macongty.Text = bh.macongty;
+            donvitinh.Text = bh.donvitinh;
             return this.ShowDialog(papa);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string maHang = textBox1.Text;
-            string tenHang = textBox2.Text;
+            string maHang = mahang.Text;
+            string tenHang = tenhang.Text;
+            string macongty = macongty.Text;
+            string donvitinh = donvitinh.Text;
+            int soluong = 0;
+            int maloaihang;
+            int gianhap;
+            int giaban;
+
 
             // Lưu giá trị maHang và tenHang vào Tag của các ô nhập liệu
-            textBox1.Tag = maHang;
-            textBox2.Tag = tenHang;
+            mahang.Tag = maHang;
+            tenhang.Tag = tenHang;
 
             bh = new banhang();
             bh.mahang = maHang;
@@ -111,6 +120,10 @@ namespace QLBH
         {
 
         }
-      
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

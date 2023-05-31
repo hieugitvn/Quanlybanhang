@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.them = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -42,27 +42,27 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.mahang = new System.Windows.Forms.TextBox();
+            this.tenhang = new System.Windows.Forms.TextBox();
+            this.macongty = new System.Windows.Forms.TextBox();
+            this.maloaihang = new System.Windows.Forms.TextBox();
+            this.soluong = new System.Windows.Forms.TextBox();
+            this.donvitinh = new System.Windows.Forms.TextBox();
+            this.gianhap = new System.Windows.Forms.TextBox();
+            this.giaban = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // them
             // 
-            this.button1.Location = new System.Drawing.Point(12, 415);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Thêm";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.them.Location = new System.Drawing.Point(12, 415);
+            this.them.Name = "them";
+            this.them.Size = new System.Drawing.Size(75, 23);
+            this.them.TabIndex = 0;
+            this.them.Text = "Thêm";
+            this.them.UseVisualStyleBackColor = true;
+            this.them.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -185,63 +185,64 @@
             this.label8.Text = "maloaihang";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // textBox1
+            // mahang
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.mahang.Location = new System.Drawing.Point(122, 33);
+            this.mahang.Name = "mahang";
+            this.mahang.Size = new System.Drawing.Size(100, 22);
+            this.mahang.TabIndex = 14;
+            this.mahang.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // tenhang
             // 
-            this.textBox2.Location = new System.Drawing.Point(122, 80);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 15;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.tenhang.Location = new System.Drawing.Point(122, 80);
+            this.tenhang.Name = "tenhang";
+            this.tenhang.Size = new System.Drawing.Size(100, 22);
+            this.tenhang.TabIndex = 15;
+            this.tenhang.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // macongty
             // 
-            this.textBox3.Location = new System.Drawing.Point(122, 129);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 16;
+            this.macongty.Location = new System.Drawing.Point(122, 129);
+            this.macongty.Name = "macongty";
+            this.macongty.Size = new System.Drawing.Size(100, 22);
+            this.macongty.TabIndex = 16;
             // 
-            // textBox4
+            // maloaihang
             // 
-            this.textBox4.Location = new System.Drawing.Point(122, 186);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 17;
+            this.maloaihang.Location = new System.Drawing.Point(122, 186);
+            this.maloaihang.Name = "maloaihang";
+            this.maloaihang.Size = new System.Drawing.Size(100, 22);
+            this.maloaihang.TabIndex = 17;
             // 
-            // textBox5
+            // soluong
             // 
-            this.textBox5.Location = new System.Drawing.Point(354, 27);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 18;
+            this.soluong.Location = new System.Drawing.Point(354, 27);
+            this.soluong.Name = "soluong";
+            this.soluong.Size = new System.Drawing.Size(100, 22);
+            this.soluong.TabIndex = 18;
             // 
-            // textBox6
+            // donvitinh
             // 
-            this.textBox6.Location = new System.Drawing.Point(354, 80);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 19;
+            this.donvitinh.Location = new System.Drawing.Point(354, 80);
+            this.donvitinh.Name = "donvitinh";
+            this.donvitinh.Size = new System.Drawing.Size(100, 22);
+            this.donvitinh.TabIndex = 19;
+            this.donvitinh.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // textBox7
+            // gianhap
             // 
-            this.textBox7.Location = new System.Drawing.Point(354, 126);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 22);
-            this.textBox7.TabIndex = 20;
+            this.gianhap.Location = new System.Drawing.Point(354, 126);
+            this.gianhap.Name = "gianhap";
+            this.gianhap.Size = new System.Drawing.Size(100, 22);
+            this.gianhap.TabIndex = 20;
             // 
-            // textBox8
+            // giaban
             // 
-            this.textBox8.Location = new System.Drawing.Point(354, 186);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 22);
-            this.textBox8.TabIndex = 21;
+            this.giaban.Location = new System.Drawing.Point(354, 186);
+            this.giaban.Name = "giaban";
+            this.giaban.Size = new System.Drawing.Size(100, 22);
+            this.giaban.TabIndex = 21;
             // 
             // dataGridView1
             // 
@@ -260,14 +261,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.giaban);
+            this.Controls.Add(this.gianhap);
+            this.Controls.Add(this.donvitinh);
+            this.Controls.Add(this.soluong);
+            this.Controls.Add(this.maloaihang);
+            this.Controls.Add(this.macongty);
+            this.Controls.Add(this.tenhang);
+            this.Controls.Add(this.mahang);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -281,7 +282,7 @@
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.them);
             this.Name = "mathang";
             this.Text = "Mặt hàng";
             this.Load += new System.EventHandler(this.mathang_Load);
@@ -293,7 +294,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button them;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
@@ -307,14 +308,14 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox mahang;
+        private System.Windows.Forms.TextBox tenhang;
+        private System.Windows.Forms.TextBox macongty;
+        private System.Windows.Forms.TextBox maloaihang;
+        private System.Windows.Forms.TextBox soluong;
+        private System.Windows.Forms.TextBox donvitinh;
+        private System.Windows.Forms.TextBox gianhap;
+        private System.Windows.Forms.TextBox giaban;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

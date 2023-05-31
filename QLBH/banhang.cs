@@ -8,7 +8,7 @@ namespace QLBH
 {
     public class banhang
     {
-        public string mahang, tenhang, macongty , donvitinh;
+        public string mahang, tenhang, macongty, donvitinh;
         public int soluong, maloaihang, gianhap, giaban;
 
     }
