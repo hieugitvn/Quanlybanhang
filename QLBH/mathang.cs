@@ -33,33 +33,50 @@ namespace QLBH
             tenhang.Text = bh.tenhang;
             macongty.Text = bh.macongty;
             donvitinh.Text = bh.donvitinh;
+            soluong.Text = bh.soluong;
+            maloaihang.Text = bh.maloaihang;
+            giaban.Text = bh.giaban;
+            gianhap.Text = bh.gianhap;
             return this.ShowDialog(papa);
         }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             string maHang = mahang.Text;
             string tenHang = tenhang.Text;
-            string macongty = macongty.Text;
-            string donvitinh = donvitinh.Text;
-            int soluong = 0;
-            int maloaihang;
-            int gianhap;
-            int giaban;
+            string Macongty = macongty.Text;
+            string Donvitinh = donvitinh.Text;
+            string Soluong = soluong.Text;
+            string Maloaihang= maloaihang.Text;
+            string Gianhap = gianhap.Text;
+            string Giaban= giaban.Text;
 
 
             // Lưu giá trị maHang và tenHang vào Tag của các ô nhập liệu
             mahang.Tag = maHang;
             tenhang.Tag = tenHang;
+            macongty.Tag = Macongty;
+            donvitinh.Tag = Donvitinh;
+            soluong.Tag = Soluong;
+            maloaihang.Tag = Maloaihang;
+            gianhap.Tag = Gianhap;
+            giaban.Tag = Giaban;
 
             bh = new banhang();
             bh.mahang = maHang;
             bh.tenhang = tenHang;
-
+            bh.macongty= Macongty;
+            bh.donvitinh= Donvitinh;
+            bh.soluong = Soluong;
+            bh.maloaihang = Maloaihang;
+            bh.gianhap = Gianhap;
+            bh.giaban = Giaban;
             // Ghi thông tin vào cơ sở dữ liệu
             string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
 
-            string query = "INSERT INTO mathang (mahang, tenhang) VALUES (@mahang, @tenhang)";
+            string query = "INSERT INTO mathang (mahang,tenhang,macongty,donvitinh,soluong,maloaihang,gianhap,giaban)" +
+                " VALUES (@mahang,@tenhang,@macongty,@donvitinh,@soluong,@maloaihang,@gianhap,@giaban)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -69,6 +86,12 @@ namespace QLBH
                 {
                     command.Parameters.AddWithValue("@mahang", maHang);
                     command.Parameters.AddWithValue("@tenhang", tenHang);
+                    command.Parameters.AddWithValue("@macongty", Macongty);
+                    command.Parameters.AddWithValue("@donvitinh", Donvitinh);
+                    command.Parameters.AddWithValue("@soluong", Soluong);
+                    command.Parameters.AddWithValue("@maloaihang", Maloaihang);
+                    command.Parameters.AddWithValue("@gianhap", Gianhap);
+                    command.Parameters.AddWithValue("@giaban", Giaban);
                     command.ExecuteNonQuery();
                 }
             }
