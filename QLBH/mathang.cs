@@ -2,26 +2,54 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient; //Sử dụng thư viện để làm việc SQL server
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace QLBH
 {
+
     public partial class mathang : Form
     {
-        DataTable tblCL; //Chứa dữ liệu bảng Chất liệu
         public mathang()
         {
             InitializeComponent();
-        }
 
+        }
+        public Functions.SqlServer db; //để bố truyền sang
+        public banhang bh;
+        public DialogResult ShowAdd(Form papa)
+        {
+            //this.Icon = Properties.Resources.add_icon;
+             this.Text = "Thêm 1 sv mới";
+            button1.Text = "Thêm SV";
+          //  LoadNganh(null);
+            return this.ShowDialog(papa);
+        }
+        public DialogResult ShowEdit(Form papa)
+        {
+           // this.Icon = Properties.Resources.edit_icon;
+           // this.Text = $"Sửa thông tin sv: {sv.masv} - {sv.hoten}";
+            button1.Text = "Cập nhật";
+            //cập nhật các giá trị lên form
+            textBox1.Text = bh.mahang;
+            textBox2.Text = bh.tenhang;
+           // dateNS.Value = sv.ngaysinh;
+           // if (sv.gt)
+            //    gtNam.Checked = true;
+           // else
+             //   gtNu.Checked = true;
+
+           // LoadNganh(bh.maNganh);
+            return this.ShowDialog(papa);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-
+            bh = new banhang();
+            bh.mahang  = textBox1.Text;
+            bh.tenhang  = textBox2.Text;
         }
 
         private void mathang_Load(object sender, EventArgs e)
@@ -58,5 +86,16 @@ namespace QLBH
         {
 
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+      
     }
 }
