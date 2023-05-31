@@ -92,8 +92,10 @@ namespace QLBH
                     command.Parameters.AddWithValue("@maloaihang", Maloaihang);
                     command.Parameters.AddWithValue("@gianhap", Gianhap);
                     command.Parameters.AddWithValue("@giaban", Giaban);
-                    command.ExecuteNonQuery();
+
+                    command.ExecuteNonQuery(); // Execute the INSERT command
                 }
+
             }
 
             MessageBox.Show("Thông tin đã được ghi vào cơ sở dữ liệu.");
@@ -147,6 +149,17 @@ namespace QLBH
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void maloaihang_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            loaihang loaihang = new loaihang(); //Khởi tạo đối tượng
+            loaihang.ShowDialog(); //Hiển thị
         }
     }
 }

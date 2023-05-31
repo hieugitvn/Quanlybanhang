@@ -51,6 +51,7 @@
             this.gianhap = new System.Windows.Forms.TextBox();
             this.giaban = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,6 +215,7 @@
             this.maloaihang.Name = "maloaihang";
             this.maloaihang.Size = new System.Drawing.Size(100, 22);
             this.maloaihang.TabIndex = 17;
+            this.maloaihang.TextChanged += new System.EventHandler(this.maloaihang_TextChanged);
             // 
             // soluong
             // 
@@ -255,11 +257,22 @@
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(713, 26);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 23;
+            this.button1.Text = "Loại hàng";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // mathang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.giaban);
             this.Controls.Add(this.gianhap);
@@ -317,5 +330,6 @@
         private System.Windows.Forms.TextBox gianhap;
         private System.Windows.Forms.TextBox giaban;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }
