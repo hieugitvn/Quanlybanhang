@@ -101,5 +101,11 @@ namespace QLBH
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ctddh ctddh = new ctddh(); //Khởi tạo đối tượng
+            ctddh.ShowDialog(); //Hiển thị
+        }
     }
 }

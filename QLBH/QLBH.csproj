@@ -185,6 +185,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="banhang.cs" />
+    <Compile Include="ctddh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ctddh.Designer.cs">
+      <DependentUpon>ctddh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="nhacungcap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="nhacungcap.Designer.cs">
+      <DependentUpon>nhacungcap.cs</DependentUpon>
+    </Compile>
     <Compile Include="nhanvien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -224,6 +236,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ctddh.resx">
+      <DependentUpon>ctddh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="nhacungcap.resx">
+      <DependentUpon>nhacungcap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="khachhang.resx">
       <DependentUpon>khachhang.cs</DependentUpon>
     </EmbeddedResource>
