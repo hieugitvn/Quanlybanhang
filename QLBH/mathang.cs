@@ -72,7 +72,7 @@ namespace QLBH
             string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
 
             string query = "INSERT INTO mathang (mahang,tenhang,macongty,donvitinh,soluong,maloaihang,gianhap)" +
-                " VALUES (@mahang,@tenhang,@macongty,@donvitinh,@soluong,@maloaihang,@gianhap,)";
+                " VALUES (@mahang,@tenhang,@macongty,@donvitinh,@soluong,@maloaihang,@gianhap)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

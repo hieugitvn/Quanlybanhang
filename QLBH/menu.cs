@@ -70,5 +70,10 @@ namespace QLBH
             nhacungcap nhacungcap = new nhacungcap(); //Khởi tạo đối tượng
             nhacungcap.ShowDialog(); //Hiển thị
         }
+
+        private void giớiThiệuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

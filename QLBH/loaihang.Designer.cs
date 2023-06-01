@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button6 = new System.Windows.Forms.Button();
-            this.luu = new System.Windows.Forms.Button();
+            this.sua = new System.Windows.Forms.Button();
             this.xoa = new System.Windows.Forms.Button();
             this.them = new System.Windows.Forms.Button();
             this.tenloaihang = new System.Windows.Forms.TextBox();
@@ -37,6 +37,7 @@
             this.text1 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,15 +51,15 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // luu
+            // sua
             // 
-            this.luu.Location = new System.Drawing.Point(481, 415);
-            this.luu.Name = "luu";
-            this.luu.Size = new System.Drawing.Size(75, 23);
-            this.luu.TabIndex = 8;
-            this.luu.Text = "Lưu";
-            this.luu.UseVisualStyleBackColor = true;
-            this.luu.Click += new System.EventHandler(this.sua_Click);
+            this.sua.Location = new System.Drawing.Point(481, 415);
+            this.sua.Name = "sua";
+            this.sua.Size = new System.Drawing.Size(75, 23);
+            this.sua.TabIndex = 8;
+            this.sua.Text = "Sửa";
+            this.sua.UseVisualStyleBackColor = true;
+            this.sua.Click += new System.EventHandler(this.sua_Click);
             // 
             // xoa
             // 
@@ -125,18 +126,29 @@
             this.dataGridView1.TabIndex = 23;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 374);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(599, 16);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Lưu ý:Nếu cần sửa thì thay đổi dữ liệu trực tiếp  trên DataGridView và bấm nút sử" +
+    "a để hoàn tất thao tác";
+            // 
             // loaihang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tenloaihang);
             this.Controls.Add(this.maloaihang);
             this.Controls.Add(this.text1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.luu);
+            this.Controls.Add(this.sua);
             this.Controls.Add(this.xoa);
             this.Controls.Add(this.them);
             this.Name = "loaihang";
@@ -151,7 +163,7 @@
         #endregion
 
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button luu;
+        private System.Windows.Forms.Button sua;
         private System.Windows.Forms.Button xoa;
         private System.Windows.Forms.Button them;
         private System.Windows.Forms.TextBox tenloaihang;
@@ -159,5 +171,6 @@
         private System.Windows.Forms.Label text1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label2;
     }
 }

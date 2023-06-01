@@ -18,20 +18,6 @@ namespace QLBH
         }
         public Functions.SqlServer db;
         public banhang lh;
-        public DialogResult ShowAdd(Form papa)
-        {
-            them.Text = "Thêm SV";
-            return this.ShowDialog(papa);
-        }
-
-        public DialogResult ShowEdit(Form papa)
-        {
-            them.Text = "Cập nhật";
-
-            tenloaihang.Text = lh.tenloaihang;
-            maloaihang.Text = lh.maloaihang;
-            return this.ShowDialog(papa);
-        }
         private void LoadData()
         {
             // Kết nối đến cơ sở dữ liệu
