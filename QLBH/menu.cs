@@ -22,7 +22,7 @@ namespace QLBH
 
         private void menu_Load(object sender, EventArgs e)
         {
-            //Functions.Connect();
+
         }
 
         private void tùyChọnToolStripMenuItem_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace QLBH
 
         private void thoat_Click(object sender, EventArgs e)
         {
-            //Functions.Disconnect(); //Đóng kết nối
+
             Application.Exit(); //Thoát
         }
 

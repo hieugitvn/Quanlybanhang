@@ -35,7 +35,7 @@
             this.email = new System.Windows.Forms.TextBox();
             this.tengiaodich = new System.Windows.Forms.TextBox();
             this.tencongty = new System.Windows.Forms.TextBox();
-            this.macongty = new System.Windows.Forms.TextBox();
+            this.Macongty = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,6 +46,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.them = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // diachi
@@ -99,12 +101,12 @@
             this.tencongty.Size = new System.Drawing.Size(100, 22);
             this.tencongty.TabIndex = 56;
             // 
-            // macongty
+            // Macongty
             // 
-            this.macongty.Location = new System.Drawing.Point(153, 16);
-            this.macongty.Name = "macongty";
-            this.macongty.Size = new System.Drawing.Size(100, 22);
-            this.macongty.TabIndex = 55;
+            this.Macongty.Location = new System.Drawing.Point(153, 16);
+            this.Macongty.Name = "Macongty";
+            this.Macongty.Size = new System.Drawing.Size(100, 22);
+            this.Macongty.TabIndex = 55;
             // 
             // label6
             // 
@@ -177,6 +179,7 @@
             this.button3.TabIndex = 65;
             this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -186,6 +189,7 @@
             this.button2.TabIndex = 64;
             this.button2.Text = "Xóa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // them
             // 
@@ -195,12 +199,24 @@
             this.them.TabIndex = 63;
             this.them.Text = "Thêm";
             this.them.UseVisualStyleBackColor = true;
+            this.them.Click += new System.EventHandler(this.them_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 190);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(761, 190);
+            this.dataGridView1.TabIndex = 69;
             // 
             // nhacungcap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -212,7 +228,7 @@
             this.Controls.Add(this.email);
             this.Controls.Add(this.tengiaodich);
             this.Controls.Add(this.tencongty);
-            this.Controls.Add(this.macongty);
+            this.Controls.Add(this.Macongty);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -222,6 +238,7 @@
             this.Name = "nhacungcap";
             this.Text = "Nhà cung cấp";
             this.Load += new System.EventHandler(this.nhacungcap_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,7 +253,7 @@
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.TextBox tengiaodich;
         private System.Windows.Forms.TextBox tencongty;
-        private System.Windows.Forms.TextBox macongty;
+        private System.Windows.Forms.TextBox Macongty;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -247,5 +264,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button them;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
