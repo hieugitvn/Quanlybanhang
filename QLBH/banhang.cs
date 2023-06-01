@@ -10,6 +10,6 @@ namespace QLBH
     {
         public string mahang, tenhang, macongty, donvitinh;
         public string soluong, maloaihang, gianhap, giaban;
-
+        public string tenloaihang;
     }
 }

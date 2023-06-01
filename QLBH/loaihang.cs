@@ -17,7 +17,7 @@ namespace QLBH
             InitializeComponent();
         }
         public Functions.SqlServer db;
-        public lhang lh;
+        public banhang lh;
         public DialogResult ShowAdd(Form papa)
         {
             them.Text = "Thêm SV";
@@ -49,7 +49,7 @@ namespace QLBH
             maloaihang.Tag = Maloaihang;
 
 
-            lh = new lhang();
+            lh = new banhang();
             lh.tenloaihang = Tenloaihang;
             lh.maloaihang = Maloaihang;
 

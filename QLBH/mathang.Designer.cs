@@ -259,9 +259,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(713, 26);
+            this.button1.Location = new System.Drawing.Point(490, 155);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 70);
             this.button1.TabIndex = 23;
             this.button1.Text = "Loại hàng";
             this.button1.UseVisualStyleBackColor = true;
