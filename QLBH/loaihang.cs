@@ -32,9 +32,32 @@ namespace QLBH
             maloaihang.Text = lh.maloaihang;
             return this.ShowDialog(papa);
         }
+        private void LoadData()
+        {
+            // Kết nối đến cơ sở dữ liệu
+            string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
+
+            // Câu truy vấn SQL để truy vấn dữ liệu từ bảng SQL
+            string query = "SELECT * FROM loaihang";
+
+            // Tạo đối tượng DataTable để lưu trữ dữ liệu từ kết quả truy vấn SQL
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Tạo đối tượng SqlDataAdapter để thực thi câu truy vấn SQL và điền dữ liệu vào đối tượng DataTable
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+
+                // Điền dữ liệu vào đối tượng DataTable
+                dataAdapter.Fill(dataTable);
+            }
+
+            // Gán đối tượng DataTable làm nguồn dữ liệu cho bảng DataGridView
+            dataGridView1.DataSource = dataTable;
+        }
         private void loaihang_Load(object sender, EventArgs e)
         {
-
+            LoadData();
         }
 
         private void them_Click(object sender, EventArgs e)
@@ -72,8 +95,8 @@ namespace QLBH
                 }
 
             }
-
             MessageBox.Show("Thông tin đã được ghi vào cơ sở dữ liệu.");
+            LoadData();
         }
 
         private void soluong_TextChanged(object sender, EventArgs e)
@@ -85,5 +108,11 @@ namespace QLBH
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }

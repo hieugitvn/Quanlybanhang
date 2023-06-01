@@ -283,6 +283,7 @@
             this.Controls.Add(this.label1);
             this.Name = "nhanvien";
             this.Text = "Nhân viên";
+            this.Load += new System.EventHandler(this.nhanvien_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

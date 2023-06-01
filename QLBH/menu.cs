@@ -64,5 +64,11 @@ namespace QLBH
             nhanvien nhanvien = new nhanvien(); //Khởi tạo đối tượng
             nhanvien.ShowDialog(); //Hiển thị
         }
+
+        private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            nhacungcap nhacungcap = new nhacungcap(); //Khởi tạo đối tượng
+            nhacungcap.ShowDialog(); //Hiển thị
+        }
     }
 }

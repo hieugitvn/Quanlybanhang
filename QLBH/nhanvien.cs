@@ -16,5 +16,10 @@ namespace QLBH
         {
             InitializeComponent();
         }
+
+        private void nhanvien_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
