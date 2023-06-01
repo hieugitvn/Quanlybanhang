@@ -121,6 +121,7 @@ namespace QLBH
 
                 // Lấy giá trị từ ô đầu tiên của hàng được chọn (giả sử là cột mã loại hàng)
                 string maloaihang = dataGridView1.Rows[rowIndex].Cells["maloaihang"].Value.ToString();
+                string tenloaihang = dataGridView1.Rows[rowIndex].Cells["tenloaihang"].Value.ToString();
 
                 // Xóa hàng từ DataTable và DataGridView
                 dataGridView1.Rows.RemoveAt(rowIndex);
@@ -146,6 +147,54 @@ namespace QLBH
         private void button2_Click(object sender, EventArgs e)
         {
             DeleteSelectedRow();
+        }
+        private void UpdateData()
+        {
+            // Lấy dữ liệu từ DataGridView
+            DataTable dataTable = (DataTable)dataGridView1.DataSource;
+
+            // Kết nối đến cơ sở dữ liệu
+            string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Vòng lặp để cập nhật từng hàng trong DataTable
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    // Lấy giá trị từ các ô trong hàng
+                    string maloaihang = row["maloaihang"].ToString();
+                    string tenloaihang = row["tenloaihang"].ToString();
+
+                    // Cập nhật dữ liệu trong SQL Server
+                    string updateQuery = "UPDATE loaihang SET tenloaihang = @tenloaihang WHERE maloaihang = @maloaihang";
+
+                    using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@tenloaihang", tenloaihang);
+                        command.Parameters.AddWithValue("@maloaihang", maloaihang);
+
+                        command.ExecuteNonQuery(); // Execute the UPDATE command
+                    }
+                }
+            }
+
+            MessageBox.Show("Dữ liệu đã được cập nhật.");
+        }
+
+
+
+        private void sua_Click(object sender, EventArgs e)
+        {
+            UpdateData();
+            LoadData();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Application.Exit(); //Thoát
         }
     }
 }

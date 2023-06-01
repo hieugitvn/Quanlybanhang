@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.luu = new System.Windows.Forms.Button();
             this.xoa = new System.Windows.Forms.Button();
             this.them = new System.Windows.Forms.Button();
             this.tenloaihang = new System.Windows.Forms.TextBox();
@@ -44,43 +42,27 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(710, 415);
+            this.button6.Location = new System.Drawing.Point(670, 415);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(118, 23);
             this.button6.TabIndex = 11;
-            this.button6.Text = "Đóng";
+            this.button6.Text = "Thoát ứng dụng";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button5
+            // luu
             // 
-            this.button5.Location = new System.Drawing.Point(557, 415);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Bỏ qua";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(396, 415);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Lưu";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(260, 415);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.luu.Location = new System.Drawing.Point(481, 415);
+            this.luu.Name = "luu";
+            this.luu.Size = new System.Drawing.Size(75, 23);
+            this.luu.TabIndex = 8;
+            this.luu.Text = "Lưu";
+            this.luu.UseVisualStyleBackColor = true;
+            this.luu.Click += new System.EventHandler(this.sua_Click);
             // 
             // xoa
             // 
-            this.xoa.Location = new System.Drawing.Point(105, 415);
+            this.xoa.Location = new System.Drawing.Point(246, 415);
             this.xoa.Name = "xoa";
             this.xoa.Size = new System.Drawing.Size(75, 23);
             this.xoa.TabIndex = 7;
@@ -154,9 +136,7 @@
             this.Controls.Add(this.text1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.luu);
             this.Controls.Add(this.xoa);
             this.Controls.Add(this.them);
             this.Name = "loaihang";
@@ -171,9 +151,7 @@
         #endregion
 
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button luu;
         private System.Windows.Forms.Button xoa;
         private System.Windows.Forms.Button them;
         private System.Windows.Forms.TextBox tenloaihang;
