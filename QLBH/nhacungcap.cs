@@ -16,5 +16,10 @@ namespace QLBH
         {
             InitializeComponent();
         }
+
+        private void nhacungcap_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

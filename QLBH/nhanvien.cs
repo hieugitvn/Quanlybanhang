@@ -179,7 +179,17 @@ namespace QLBH
                     string luongcoban = row["luongcoban"].ToString();
                     string phucap = row["phucap"].ToString();
                     // Cập nhật dữ liệu trong SQL Server
-                    string updateQuery = "UPDATE nhanvien SET ho = @ho WHERE manhanvien = @manhanvien";
+                    string updateQuery = @"UPDATE nhanvien SET 
+                        ho = @ho,
+                        ten = @ten,
+                        ngaysinh = @ngaysinh,
+                        ngaylamviec = @ngaylamviec,
+                        diachi = @diachi,
+                        dienthoai = @dienthoai,
+                        luongcoban = @luongcoban,
+                        phucap = @phucap
+                      WHERE manhanvien = @manhanvien";
+
 
                     using (SqlCommand command = new SqlCommand(updateQuery, connection))
                     {

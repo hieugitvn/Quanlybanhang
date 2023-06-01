@@ -221,6 +221,7 @@
             this.Controls.Add(this.label1);
             this.Name = "nhacungcap";
             this.Text = "Nhà cung cấp";
+            this.Load += new System.EventHandler(this.nhacungcap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
