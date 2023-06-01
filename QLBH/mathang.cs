@@ -161,5 +161,10 @@ namespace QLBH
             loaihang loaihang = new loaihang(); //Khởi tạo đối tượng
             loaihang.ShowDialog(); //Hiển thị
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -52,5 +52,17 @@ namespace QLBH
             đondathang đondathang = new đondathang(); //Khởi tạo đối tượng
             đondathang.ShowDialog(); //Hiển thị
         }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            khachhang khachhang = new khachhang(); //Khởi tạo đối tượng
+            khachhang.ShowDialog(); //Hiển thị
+        }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            nhanvien nhanvien = new nhanvien(); //Khởi tạo đối tượng
+            nhanvien.ShowDialog(); //Hiển thị
+        }
     }
 }
