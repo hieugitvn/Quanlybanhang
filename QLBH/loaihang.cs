@@ -113,6 +113,39 @@ namespace QLBH
         {
 
         }
+        private void DeleteSelectedRow()
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridView1.SelectedRows[0].Index;
 
+                // Lấy giá trị từ ô đầu tiên của hàng được chọn (giả sử là cột mã loại hàng)
+                string maloaihang = dataGridView1.Rows[rowIndex].Cells["maloaihang"].Value.ToString();
+
+                // Xóa hàng từ DataTable và DataGridView
+                dataGridView1.Rows.RemoveAt(rowIndex);
+
+                // Xóa dữ liệu tương ứng từ SQL Server
+                string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
+                string deleteQuery = "DELETE FROM loaihang WHERE maloaihang = @maloaihang";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(deleteQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@maloaihang", maloaihang);
+                        command.ExecuteNonQuery(); // Execute the DELETE command
+                    }
+                }
+            }
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DeleteSelectedRow();
+        }
     }
 }

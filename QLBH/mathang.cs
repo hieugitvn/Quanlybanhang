@@ -35,7 +35,6 @@ namespace QLBH
             donvitinh.Text = bh.donvitinh;
             soluong.Text = bh.soluong;
             maloaihang.Text = bh.maloaihang;
-            giaban.Text = bh.giaban;
             gianhap.Text = bh.gianhap;
             return this.ShowDialog(papa);
         }
@@ -50,7 +49,6 @@ namespace QLBH
             string Soluong = soluong.Text;
             string Maloaihang= maloaihang.Text;
             string Gianhap = gianhap.Text;
-            string Giaban= giaban.Text;
 
 
             // Lưu giá trị maHang và tenHang vào Tag của các ô nhập liệu
@@ -61,7 +59,6 @@ namespace QLBH
             soluong.Tag = Soluong;
             maloaihang.Tag = Maloaihang;
             gianhap.Tag = Gianhap;
-            giaban.Tag = Giaban;
 
             bh = new banhang();
             bh.mahang = maHang;
@@ -71,12 +68,11 @@ namespace QLBH
             bh.soluong = Soluong;
             bh.maloaihang = Maloaihang;
             bh.gianhap = Gianhap;
-            bh.giaban = Giaban;
             // Ghi thông tin vào cơ sở dữ liệu
             string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
 
-            string query = "INSERT INTO mathang (mahang,tenhang,macongty,donvitinh,soluong,maloaihang,gianhap,giaban)" +
-                " VALUES (@mahang,@tenhang,@macongty,@donvitinh,@soluong,@maloaihang,@gianhap,@giaban)";
+            string query = "INSERT INTO mathang (mahang,tenhang,macongty,donvitinh,soluong,maloaihang,gianhap)" +
+                " VALUES (@mahang,@tenhang,@macongty,@donvitinh,@soluong,@maloaihang,@gianhap,)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -91,7 +87,7 @@ namespace QLBH
                     command.Parameters.AddWithValue("@soluong", Soluong);
                     command.Parameters.AddWithValue("@maloaihang", Maloaihang);
                     command.Parameters.AddWithValue("@gianhap", Gianhap);
-                    command.Parameters.AddWithValue("@giaban", Giaban);
+
 
                     command.ExecuteNonQuery(); // Execute the INSERT command
                 }

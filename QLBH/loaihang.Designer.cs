@@ -32,7 +32,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.xoa = new System.Windows.Forms.Button();
             this.them = new System.Windows.Forms.Button();
             this.tenloaihang = new System.Windows.Forms.TextBox();
             this.maloaihang = new System.Windows.Forms.TextBox();
@@ -78,14 +78,15 @@
             this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // xoa
             // 
-            this.button2.Location = new System.Drawing.Point(105, 415);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
+            this.xoa.Location = new System.Drawing.Point(105, 415);
+            this.xoa.Name = "xoa";
+            this.xoa.Size = new System.Drawing.Size(75, 23);
+            this.xoa.TabIndex = 7;
+            this.xoa.Text = "Xóa";
+            this.xoa.UseVisualStyleBackColor = true;
+            this.xoa.Click += new System.EventHandler(this.button2_Click);
             // 
             // them
             // 
@@ -156,7 +157,7 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.xoa);
             this.Controls.Add(this.them);
             this.Name = "loaihang";
             this.Text = "Loại Hàng";
@@ -173,7 +174,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button xoa;
         private System.Windows.Forms.Button them;
         private System.Windows.Forms.TextBox tenloaihang;
         private System.Windows.Forms.TextBox maloaihang;
