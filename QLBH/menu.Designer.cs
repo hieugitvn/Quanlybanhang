@@ -74,7 +74,7 @@
             // 
             this.thoat.Name = "thoat";
             this.thoat.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.thoat.Size = new System.Drawing.Size(224, 26);
+            this.thoat.Size = new System.Drawing.Size(183, 26);
             this.thoat.Text = "Thoát";
             this.thoat.Click += new System.EventHandler(this.thoat_Click);
             // 
@@ -102,6 +102,7 @@
             this.đơnHàngToolStripMenuItem.Name = "đơnHàngToolStripMenuItem";
             this.đơnHàngToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.đơnHàngToolStripMenuItem.Text = "Đơn hàng";
+            this.đơnHàngToolStripMenuItem.Click += new System.EventHandler(this.đơnHàngToolStripMenuItem_Click);
             // 
             // kháchHàngToolStripMenuItem
             // 

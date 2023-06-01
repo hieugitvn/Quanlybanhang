@@ -145,7 +145,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.them);
             this.Name = "loaihang";
-            this.Text = "Form1";
+            this.Text = "Loại Hàng";
             this.Load += new System.EventHandler(this.loaihang_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

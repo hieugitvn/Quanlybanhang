@@ -46,5 +46,11 @@ namespace QLBH
             mathang mathang = new mathang(); //Khởi tạo đối tượng
            mathang.ShowDialog(); //Hiển thị
         }
+
+        private void đơnHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            đondathang đondathang = new đondathang(); //Khởi tạo đối tượng
+            đondathang.ShowDialog(); //Hiển thị
+        }
     }
 }
