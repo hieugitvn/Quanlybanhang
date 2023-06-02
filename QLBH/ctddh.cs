@@ -174,6 +174,7 @@ namespace QLBH
             }
 
             MessageBox.Show("Thông tin đã được ghi vào cơ sở dữ liệu.");
+            LoadData();
         }
 
         private void button2_Click(object sender, EventArgs e)

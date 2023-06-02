@@ -181,6 +181,7 @@ namespace QLBH
             }
 
             MessageBox.Show("Thông tin đã được ghi vào cơ sở dữ liệu.");
+            LoadData();
         }
 
         private void mathang_Load(object sender, EventArgs e)

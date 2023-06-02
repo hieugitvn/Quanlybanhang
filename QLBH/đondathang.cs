@@ -184,6 +184,7 @@ namespace QLBH
             }
 
             MessageBox.Show("Thông tin đã được ghi vào cơ sở dữ liệu.");
+            LoadData();
         }
 
         private void sohoadon_TextChanged(object sender, EventArgs e)
