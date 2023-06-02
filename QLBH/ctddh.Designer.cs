@@ -42,6 +42,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.mucgiamgia = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // sohoadon
@@ -160,11 +162,22 @@
             this.label2.TabIndex = 55;
             this.label2.Text = "Mức giảm giá";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(22, 177);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(761, 190);
+            this.dataGridView1.TabIndex = 58;
+            // 
             // ctddh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.soluong);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.mucgiamgia);
@@ -181,6 +194,7 @@
             this.Controls.Add(this.label3);
             this.Name = "ctddh";
             this.Text = "Chi tiết đơn đặt hàng";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,5 +216,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox mucgiamgia;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

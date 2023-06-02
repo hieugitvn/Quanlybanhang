@@ -101,5 +101,10 @@ namespace QLBH
         {
 
         }
+
+        private void khachhang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

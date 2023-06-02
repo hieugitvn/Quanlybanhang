@@ -38,7 +38,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.mahang = new System.Windows.Forms.TextBox();
             this.tenhang = new System.Windows.Forms.TextBox();
@@ -47,7 +46,6 @@
             this.soluong = new System.Windows.Forms.TextBox();
             this.donvitinh = new System.Windows.Forms.TextBox();
             this.gianhap = new System.Windows.Forms.TextBox();
-            this.giaban = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -98,9 +96,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(41, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 16);
+            this.label1.Size = new System.Drawing.Size(62, 16);
             this.label1.TabIndex = 6;
-            this.label1.Text = "mahang";
+            this.label1.Text = "Mã hàng ";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -108,63 +106,54 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(43, 80);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 16);
+            this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 7;
-            this.label2.Text = "tenhang";
+            this.label2.Text = "Tên hàng";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(43, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 16);
+            this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 8;
-            this.label3.Text = "macongty";
+            this.label3.Text = "Mã công ty";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(260, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 16);
+            this.label4.Size = new System.Drawing.Size(60, 16);
             this.label4.TabIndex = 9;
-            this.label4.Text = "soluong";
+            this.label4.Text = "Số lượng";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(260, 80);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 16);
+            this.label5.Size = new System.Drawing.Size(67, 16);
             this.label5.TabIndex = 10;
-            this.label5.Text = "donvitinh";
+            this.label5.Text = "Đơn vị tính";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(260, 132);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 16);
+            this.label6.Size = new System.Drawing.Size(61, 16);
             this.label6.TabIndex = 11;
-            this.label6.Text = "gianhap";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(260, 192);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(49, 16);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "giaban";
+            this.label6.Text = "Giá nhập";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(41, 192);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 16);
+            this.label8.Size = new System.Drawing.Size(84, 16);
             this.label8.TabIndex = 13;
-            this.label8.Text = "maloaihang";
+            this.label8.Text = "Mã loại hàng";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // mahang
@@ -220,13 +209,6 @@
             this.gianhap.Size = new System.Drawing.Size(100, 22);
             this.gianhap.TabIndex = 20;
             // 
-            // giaban
-            // 
-            this.giaban.Location = new System.Drawing.Point(354, 186);
-            this.giaban.Name = "giaban";
-            this.giaban.Size = new System.Drawing.Size(100, 22);
-            this.giaban.TabIndex = 21;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -240,9 +222,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(490, 155);
+            this.button1.Location = new System.Drawing.Point(252, 166);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 70);
+            this.button1.Size = new System.Drawing.Size(75, 63);
             this.button1.TabIndex = 23;
             this.button1.Text = "Loại hàng";
             this.button1.UseVisualStyleBackColor = true;
@@ -255,7 +237,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.giaban);
             this.Controls.Add(this.gianhap);
             this.Controls.Add(this.donvitinh);
             this.Controls.Add(this.soluong);
@@ -264,7 +245,6 @@
             this.Controls.Add(this.tenhang);
             this.Controls.Add(this.mahang);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -296,7 +276,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox mahang;
         private System.Windows.Forms.TextBox tenhang;
@@ -305,7 +284,6 @@
         private System.Windows.Forms.TextBox soluong;
         private System.Windows.Forms.TextBox donvitinh;
         private System.Windows.Forms.TextBox gianhap;
-        private System.Windows.Forms.TextBox giaban;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
     }

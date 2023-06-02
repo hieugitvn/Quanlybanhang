@@ -159,16 +159,16 @@ namespace QLBH
                     string fax = row["fax"].ToString();
                     string diachi = row["diachi"].ToString();
                     string dienthoai = row["dienthoai"].ToString();
-                    // Cập nhật dữ liệu trong SQL Server
-                    string updateQuery = @"UPDATE nhanvien SET 
-                        tencongty = @tencongty,
-                        tengiaodich = @tengiaodich,
-                        email = @email,
-                        fax = @fax,
-                        diachi = @diachi,
-                        dienthoai = @dienthoai
-                      WHERE Macongty = @Macongty";
 
+                    // Cập nhật dữ liệu trong SQL Server
+                    string updateQuery = @"UPDATE nhacungcap SET 
+                                    tencongty = @tencongty,
+                                    tengiaodich = @tengiaodich,
+                                    email = @email,
+                                    fax = @fax,
+                                    diachi = @diachi,
+                                    dienthoai = @dienthoai
+                                  WHERE Macongty = @Macongty";
 
                     using (SqlCommand command = new SqlCommand(updateQuery, connection))
                     {
@@ -179,13 +179,14 @@ namespace QLBH
                         command.Parameters.AddWithValue("@fax", fax);
                         command.Parameters.AddWithValue("@diachi", diachi);
                         command.Parameters.AddWithValue("@dienthoai", dienthoai);
-                        command.ExecuteNonQuery(); // Execute the UPDATE command
+                        command.ExecuteNonQuery(); // Thực thi câu truy vấn UPDATE
                     }
                 }
             }
 
             MessageBox.Show("Dữ liệu đã được cập nhật.");
         }
+
         private void button3_Click(object sender, EventArgs e)
         {
             UpdateData();
