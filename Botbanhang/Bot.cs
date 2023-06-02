@@ -14,9 +14,9 @@ namespace Botbanhang
     public partial class Bot : Form
     {
         public TelegramBotClient botClient;
+        data dt;
         int logCounter = 0;
         public long chatId = 6233179764;
-
         void AddLog(string msg)
         {
             if (textBox1.InvokeRequired)
@@ -43,7 +43,7 @@ namespace Botbanhang
             InitializeComponent();
             // Thằng QuanLyBanHanglv1_bot
             string token = "5897322546:AAER81g3LxIirw1j3dX9Z8IUEQ0t_ohu9C4";
-
+            dt = new data();
             //Console.WriteLine("my token=" + token);
 
             botClient = new TelegramBotClient(token);  // Tạo 1 thằng bot 
@@ -105,8 +105,19 @@ namespace Botbanhang
 
 
                 //Đến phần lắp code chạy mấy cái gọi data ra hay kêu phản hồi dựa theo các điều kiện mình đưa ra 
-
-
+                if (s2.StartsWith("lenh"))
+                {
+                    reply = "Chua co ti them sau";
+                }
+                else if (s2.StartsWith("hienthi "))
+                {
+                    string tableName = messageText.Substring(8);
+                    reply = dt.Hienthi(tableName);
+                }
+                else 
+                {
+                    reply = "Không hiểu bạn nói j á" ;
+                }
 
 
 
