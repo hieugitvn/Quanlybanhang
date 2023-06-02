@@ -187,6 +187,7 @@ namespace QLBH
             MessageBox.Show("Dữ liệu đã được cập nhật.");
         }
 
+
         private void button3_Click(object sender, EventArgs e)
         {
             UpdateData();
