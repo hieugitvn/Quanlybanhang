@@ -25,7 +25,7 @@ namespace QLBH
             string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
 
             // Câu truy vấn SQL để truy vấn dữ liệu từ bảng SQL
-            string query = "SELECT * FROM ctddh";
+            string query = "SELECT * FROM chitietdathang";
 
             // Tạo đối tượng DataTable để lưu trữ dữ liệu từ kết quả truy vấn SQL
             DataTable dataTable = new DataTable();
@@ -60,7 +60,7 @@ namespace QLBH
 
                 // Xóa dữ liệu tương ứng từ SQL Server
                 string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
-                string deleteQuery = "DELETE FROM ctddh WHERE Sohoadon = @Sohoadon";
+                string deleteQuery = "DELETE FROM chitietdathang WHERE Sohoadon = @Sohoadon";
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -99,7 +99,7 @@ namespace QLBH
 
 
                     // Cập nhật dữ liệu trong SQL Server
-                    string updateQuery = @"UPDATE ctddh SET 
+                    string updateQuery = @"UPDATE chitietdathang SET 
                                     mahang = @mahang,
                                     giaban = @giaban,
                                     soluong = @soluong,
@@ -152,8 +152,8 @@ namespace QLBH
             // Ghi thông tin vào cơ sở dữ liệu
             string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
 
-            string query = "INSERT INTO ctddh (sohoadon,mahang,giaban,soluong,zmucgiamgia)" +
-                " VALUES (@sohoadon,@mahang,@giaban,@soluong,@zmucgiamgia)";
+            string query = "INSERT INTO chitietdathang (sohoadon,mahang,giaban,soluong,mucgiamgia)" +
+                " VALUES (@sohoadon,@mahang,@giaban,@soluong,@mucgiamgia)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

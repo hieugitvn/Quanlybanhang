@@ -15,6 +15,7 @@ namespace Botbanhang
     {
         public TelegramBotClient botClient;
         data dt;
+
         int logCounter = 0;
         public long chatId = 6233179764;
         void AddLog(string msg)
@@ -109,14 +110,21 @@ namespace Botbanhang
                 {
                     reply = "Chua co ti them sau";
                 }
-                else if (s2.StartsWith("hienthi "))
+                else if (s2.StartsWith("/hienthi "))
                 {
-                    string tableName = messageText.Substring(8);
+                    string tableName = messageText.Substring(9);
                     reply = dt.Hienthi(tableName);
                 }
-                else 
+                else if (messageText == "/doanhthu")
                 {
-                    reply = "Không hiểu bạn nói j á" ;
+                    decimal Doanhthu = dt.Doanhthu(); // Gọi phương thức để tính tổng doanh thu
+                    reply = $"Tổng doanh thu là: {Doanhthu.ToString()}"; // Tạo nội dung trả lời
+                }
+
+                else
+                {
+                    reply = "/doanhthu để hiển thị doanh thu\n" +
+                        "hienthi +tên bảng để hiển thị dữ liệu bảng đó" ;
                 }
 
 
