@@ -19,55 +19,140 @@ namespace QLBH
 
         public Functions.SqlServer db;
         public banhang bh;
-
-        public DialogResult ShowAdd(Form papa)
+        private void LoadData()
         {
-            them.Text = "Thêm SV";
-            return this.ShowDialog(papa);
-        }
+            // Kết nối đến cơ sở dữ liệu
+            string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
 
-        public DialogResult ShowEdit(Form papa)
+            // Câu truy vấn SQL để truy vấn dữ liệu từ bảng SQL
+            string query = "SELECT * FROM mathang";
+
+            // Tạo đối tượng DataTable để lưu trữ dữ liệu từ kết quả truy vấn SQL
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                // Tạo đối tượng SqlDataAdapter để thực thi câu truy vấn SQL và điền dữ liệu vào đối tượng DataTable
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(query, connection);
+
+                // Điền dữ liệu vào đối tượng DataTable
+                dataAdapter.Fill(dataTable);
+            }
+
+            // Gán đối tượng DataTable làm nguồn dữ liệu cho bảng DataGridView
+            dataGridView1.DataSource = dataTable;
+        }
+        private void DeleteSelectedRow()
         {
-            them.Text = "Cập nhật";
-            mahang.Text = bh.mahang;
-            tenhang.Text = bh.tenhang;
-            macongty.Text = bh.macongty;
-            donvitinh.Text = bh.donvitinh;
-            soluong.Text = bh.soluong;
-            maloaihang.Text = bh.maloaihang;
-            gianhap.Text = bh.gianhap;
-            return this.ShowDialog(papa);
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                int rowIndex = dataGridView1.SelectedRows[0].Index;
+
+                // Lấy giá trị từ ô đầu tiên của hàng được chọn (giả sử là cột mã loại hàng)
+                string mahang = dataGridView1.Rows[rowIndex].Cells["mahang"].Value.ToString();
+                string tenhang = dataGridView1.Rows[rowIndex].Cells["tenhang"].Value.ToString();
+                string macongty = dataGridView1.Rows[rowIndex].Cells["macongty"].Value.ToString();
+                string maloaihang = dataGridView1.Rows[rowIndex].Cells["maloaihang"].Value.ToString();
+                string soluong = dataGridView1.Rows[rowIndex].Cells["soluong"].Value.ToString();
+                string donvitinh = dataGridView1.Rows[rowIndex].Cells["donvitinh"].Value.ToString();
+                string gianhap = dataGridView1.Rows[rowIndex].Cells["gianhap"].Value.ToString();
+                // Xóa hàng từ DataTable và DataGridView
+                dataGridView1.Rows.RemoveAt(rowIndex);
+
+                // Xóa dữ liệu tương ứng từ SQL Server
+                string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
+                string deleteQuery = "DELETE FROM mathang WHERE mahang = @mahang";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand command = new SqlCommand(deleteQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@mahang", mahang);
+                        command.ExecuteNonQuery(); // Execute the DELETE command
+                    }
+                }
+            }
         }
+        private void UpdateData()
+        {
+            // Lấy dữ liệu từ DataGridView
+            DataTable dataTable = (DataTable)dataGridView1.DataSource;
 
+            // Kết nối đến cơ sở dữ liệu
+            string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
 
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Vòng lặp để cập nhật từng hàng trong DataTable
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    // Lấy giá trị từ các ô trong hàng
+                    string mahang = row["mahang"].ToString();
+                    string tenhang = row["tenhang"].ToString();
+                    string macongty = row["macongty"].ToString();
+                    string maloaihang = row["maloaihang"].ToString();
+                    string soluong = row["soluong"].ToString();
+                    string donvitinh = row["donvitinh"].ToString();
+                    string gianhap = row["gianhap"].ToString();
+
+                    // Cập nhật dữ liệu trong SQL Server
+                    string updateQuery = @"UPDATE mathang SET 
+                                    tenhang = @tenhang,
+                                    macongty = @macongty,
+                                    maloaihang = @maloaihang,
+                                    soluong = @soluong,
+                                    donvitinh = @donvitinh,
+                                    gianhap = @gianhap
+                                  WHERE mahang = @mahang";
+
+                    using (SqlCommand command = new SqlCommand(updateQuery, connection))
+                    {
+                        command.Parameters.AddWithValue("@mahang", mahang);
+                        command.Parameters.AddWithValue("@tenhang", tenhang);
+                        command.Parameters.AddWithValue("@macongty", macongty);
+                        command.Parameters.AddWithValue("@maloaihang", maloaihang);
+                        command.Parameters.AddWithValue("@soluong", soluong);
+                        command.Parameters.AddWithValue("@donvitinh", donvitinh);
+                        command.Parameters.AddWithValue("@gianhap", gianhap);
+                        command.ExecuteNonQuery(); // Thực thi câu truy vấn UPDATE
+                    }
+                }
+            }
+
+            MessageBox.Show("Dữ liệu đã được cập nhật.");
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            string maHang = mahang.Text;
-            string tenHang = tenhang.Text;
-            string Macongty = macongty.Text;
-            string Donvitinh = donvitinh.Text;
-            string Soluong = soluong.Text;
-            string Maloaihang= maloaihang.Text;
-            string Gianhap = gianhap.Text;
+            string zmahang = mahang.Text;
+            string ztenhang = tenhang.Text;
+            string zmacongty = macongty.Text;
+            string zdonvitinh = donvitinh.Text;
+            string zsoluong = soluong.Text;
+            string zmaloaihang = maloaihang.Text;
+            string zgianhap = gianhap.Text;
 
 
             // Lưu giá trị maHang và tenHang vào Tag của các ô nhập liệu
-            mahang.Tag = maHang;
-            tenhang.Tag = tenHang;
-            macongty.Tag = Macongty;
-            donvitinh.Tag = Donvitinh;
-            soluong.Tag = Soluong;
-            maloaihang.Tag = Maloaihang;
-            gianhap.Tag = Gianhap;
+            mahang.Tag = zmahang;
+            tenhang.Tag = ztenhang;
+            macongty.Tag = zmacongty;
+            donvitinh.Tag = zdonvitinh;
+            soluong.Tag = zsoluong;
+            maloaihang.Tag = zmaloaihang;
+            gianhap.Tag = zgianhap;
 
             bh = new banhang();
-            bh.mahang = maHang;
-            bh.tenhang = tenHang;
-            bh.macongty= Macongty;
-            bh.donvitinh= Donvitinh;
-            bh.soluong = Soluong;
-            bh.maloaihang = Maloaihang;
-            bh.gianhap = Gianhap;
+            bh.mahang = zmahang;
+            bh.tenhang = ztenhang;
+            bh.macongty= zmacongty;
+            bh.donvitinh= zdonvitinh;
+            bh.soluong = zsoluong;
+            bh.maloaihang = zmaloaihang;
+            bh.gianhap = zgianhap;
             // Ghi thông tin vào cơ sở dữ liệu
             string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
 
@@ -80,13 +165,13 @@ namespace QLBH
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@mahang", maHang);
-                    command.Parameters.AddWithValue("@tenhang", tenHang);
-                    command.Parameters.AddWithValue("@macongty", Macongty);
-                    command.Parameters.AddWithValue("@donvitinh", Donvitinh);
-                    command.Parameters.AddWithValue("@soluong", Soluong);
-                    command.Parameters.AddWithValue("@maloaihang", Maloaihang);
-                    command.Parameters.AddWithValue("@gianhap", Gianhap);
+                    command.Parameters.AddWithValue("@mahang", zmahang);
+                    command.Parameters.AddWithValue("@tenhang", ztenhang);
+                    command.Parameters.AddWithValue("@macongty", zmacongty);
+                    command.Parameters.AddWithValue("@donvitinh", zdonvitinh);
+                    command.Parameters.AddWithValue("@soluong", zsoluong);
+                    command.Parameters.AddWithValue("@maloaihang", zmaloaihang);
+                    command.Parameters.AddWithValue("@gianhap", zgianhap);
 
 
                     command.ExecuteNonQuery(); // Execute the INSERT command
@@ -99,7 +184,7 @@ namespace QLBH
 
         private void mathang_Load(object sender, EventArgs e)
         {
-
+            LoadData();
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -109,7 +194,8 @@ namespace QLBH
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            UpdateData();
+            LoadData();
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -160,7 +246,13 @@ namespace QLBH
 
         private void button2_Click(object sender, EventArgs e)
         {
+            DeleteSelectedRow();
+        }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            nhacungcap loaihang = new nhacungcap(); //Khởi tạo đối tượng
+            loaihang.ShowDialog(); //Hiển thị
         }
     }
 }

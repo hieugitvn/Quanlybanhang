@@ -249,6 +249,7 @@
             this.Controls.Add(this.them);
             this.Name = "đondathang";
             this.Text = "Đơn đặt hàng";
+            this.Load += new System.EventHandler(this.đondathang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

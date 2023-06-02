@@ -112,5 +112,10 @@ namespace QLBH
         {
 
         }
+
+        private void đondathang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
