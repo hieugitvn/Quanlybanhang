@@ -147,6 +147,7 @@ namespace QLBH
                     }
                 }
             }
+            MessageBox.Show("Dữ liệu đã được xóa.");
         }
 
         private void button2_Click(object sender, EventArgs e)

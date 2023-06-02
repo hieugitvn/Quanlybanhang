@@ -111,6 +111,7 @@
             this.button3.TabIndex = 51;
             this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -120,6 +121,7 @@
             this.button2.TabIndex = 50;
             this.button2.Text = "Xóa";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // them
             // 
@@ -129,6 +131,7 @@
             this.them.TabIndex = 49;
             this.them.Text = "Thêm";
             this.them.UseVisualStyleBackColor = true;
+            this.them.Click += new System.EventHandler(this.them_Click);
             // 
             // soluong
             // 
@@ -194,6 +197,7 @@
             this.Controls.Add(this.label3);
             this.Name = "ctddh";
             this.Text = "Chi tiết đơn đặt hàng";
+            this.Load += new System.EventHandler(this.ctddh_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

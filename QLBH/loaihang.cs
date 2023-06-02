@@ -127,6 +127,7 @@ namespace QLBH
                     }
                 }
             }
+            MessageBox.Show("Dữ liệu đã được xóa.");
         }
 
 

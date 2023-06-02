@@ -59,6 +59,7 @@
             this.button6.TabIndex = 11;
             this.button6.Text = "Đóng";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button3
             // 
@@ -68,6 +69,7 @@
             this.button3.TabIndex = 8;
             this.button3.Text = "Sửa";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click_1);
             // 
             // button2
             // 
