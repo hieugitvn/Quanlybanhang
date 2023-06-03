@@ -46,12 +46,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.timkiem = new System.Windows.Forms.Button();
+            this.sua = new System.Windows.Forms.Button();
+            this.xoa = new System.Windows.Forms.Button();
             this.them = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tk = new System.Windows.Forms.TextBox();
             this.hienthi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -201,35 +201,35 @@
             this.label9.TabIndex = 37;
             this.label9.Text = "Điện thoại";
             // 
-            // button6
+            // timkiem
             // 
-            this.button6.Location = new System.Drawing.Point(586, 415);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 48;
-            this.button6.Text = "Tìm kiếm";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.timkiem.Location = new System.Drawing.Point(586, 415);
+            this.timkiem.Name = "timkiem";
+            this.timkiem.Size = new System.Drawing.Size(75, 23);
+            this.timkiem.TabIndex = 48;
+            this.timkiem.Text = "Tìm kiếm";
+            this.timkiem.UseVisualStyleBackColor = true;
+            this.timkiem.Click += new System.EventHandler(this.button6_Click);
             // 
-            // button3
+            // sua
             // 
-            this.button3.Location = new System.Drawing.Point(280, 414);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 45;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.sua.Location = new System.Drawing.Point(280, 414);
+            this.sua.Name = "sua";
+            this.sua.Size = new System.Drawing.Size(75, 23);
+            this.sua.TabIndex = 45;
+            this.sua.Text = "Sửa";
+            this.sua.UseVisualStyleBackColor = true;
+            this.sua.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // xoa
             // 
-            this.button2.Location = new System.Drawing.Point(138, 415);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 44;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.xoa.Location = new System.Drawing.Point(138, 415);
+            this.xoa.Name = "xoa";
+            this.xoa.Size = new System.Drawing.Size(75, 23);
+            this.xoa.TabIndex = 44;
+            this.xoa.Text = "Xóa";
+            this.xoa.UseVisualStyleBackColor = true;
+            this.xoa.Click += new System.EventHandler(this.button2_Click);
             // 
             // them
             // 
@@ -252,16 +252,17 @@
             this.dataGridView1.TabIndex = 49;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // textBox1
+            // tk
             // 
-            this.textBox1.Location = new System.Drawing.Point(667, 415);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 50;
+            this.tk.Location = new System.Drawing.Point(667, 415);
+            this.tk.Name = "tk";
+            this.tk.Size = new System.Drawing.Size(100, 22);
+            this.tk.TabIndex = 50;
+            this.tk.TextChanged += new System.EventHandler(this.tk_TextChanged);
             // 
             // hienthi
             // 
-            this.hienthi.Location = new System.Drawing.Point(456, 415);
+            this.hienthi.Location = new System.Drawing.Point(441, 415);
             this.hienthi.Name = "hienthi";
             this.hienthi.Size = new System.Drawing.Size(75, 23);
             this.hienthi.TabIndex = 51;
@@ -275,11 +276,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.hienthi);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tk);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.timkiem);
+            this.Controls.Add(this.sua);
+            this.Controls.Add(this.xoa);
             this.Controls.Add(this.them);
             this.Controls.Add(this.phucap);
             this.Controls.Add(this.luongcoban);
@@ -328,12 +329,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button timkiem;
+        private System.Windows.Forms.Button sua;
+        private System.Windows.Forms.Button xoa;
         private System.Windows.Forms.Button them;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tk;
         private System.Windows.Forms.Button hienthi;
     }
 }

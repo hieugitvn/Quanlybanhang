@@ -52,26 +52,34 @@ namespace QLBH
 
         private void đơnHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             đondathang đondathang = new đondathang(); //Khởi tạo đối tượng
             đondathang.ShowDialog(); //Hiển thị
+            this.Show();
         }
 
         private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             khachhang khachhang = new khachhang(); //Khởi tạo đối tượng
             khachhang.ShowDialog(); //Hiển thị
+            this.Show();
         }
 
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             nhanvien nhanvien = new nhanvien(); //Khởi tạo đối tượng
             nhanvien.ShowDialog(); //Hiển thị
+            this.Show();
         }
 
         private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             nhacungcap nhacungcap = new nhacungcap(); //Khởi tạo đối tượng
             nhacungcap.ShowDialog(); //Hiển thị
+            this.Show();
         }
 
         private void giớiThiệuToolStripMenuItem_Click(object sender, EventArgs e)

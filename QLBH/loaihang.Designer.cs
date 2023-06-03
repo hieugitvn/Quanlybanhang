@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button6 = new System.Windows.Forms.Button();
             this.sua = new System.Windows.Forms.Button();
             this.xoa = new System.Windows.Forms.Button();
             this.them = new System.Windows.Forms.Button();
@@ -38,22 +37,15 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
+            this.hienthi = new System.Windows.Forms.Button();
+            this.tk = new System.Windows.Forms.TextBox();
+            this.timkiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(670, 415);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(118, 23);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Thoát ứng dụng";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
             // sua
             // 
-            this.sua.Location = new System.Drawing.Point(481, 415);
+            this.sua.Location = new System.Drawing.Point(337, 415);
             this.sua.Name = "sua";
             this.sua.Size = new System.Drawing.Size(75, 23);
             this.sua.TabIndex = 8;
@@ -63,7 +55,7 @@
             // 
             // xoa
             // 
-            this.xoa.Location = new System.Drawing.Point(246, 415);
+            this.xoa.Location = new System.Drawing.Point(153, 415);
             this.xoa.Name = "xoa";
             this.xoa.Size = new System.Drawing.Size(75, 23);
             this.xoa.TabIndex = 7;
@@ -136,18 +128,48 @@
             this.label2.Text = "Lưu ý:Nếu cần sửa thì thay đổi dữ liệu trực tiếp  trên DataGridView và bấm nút sử" +
     "a để hoàn tất thao tác";
             // 
+            // hienthi
+            // 
+            this.hienthi.Location = new System.Drawing.Point(452, 415);
+            this.hienthi.Name = "hienthi";
+            this.hienthi.Size = new System.Drawing.Size(75, 23);
+            this.hienthi.TabIndex = 54;
+            this.hienthi.Text = "Hiển thị";
+            this.hienthi.UseVisualStyleBackColor = true;
+            this.hienthi.Click += new System.EventHandler(this.hienthi_Click);
+            // 
+            // tk
+            // 
+            this.tk.Location = new System.Drawing.Point(678, 415);
+            this.tk.Name = "tk";
+            this.tk.Size = new System.Drawing.Size(100, 22);
+            this.tk.TabIndex = 53;
+            this.tk.TextChanged += new System.EventHandler(this.tk_TextChanged);
+            // 
+            // timkiem
+            // 
+            this.timkiem.Location = new System.Drawing.Point(597, 415);
+            this.timkiem.Name = "timkiem";
+            this.timkiem.Size = new System.Drawing.Size(75, 23);
+            this.timkiem.TabIndex = 52;
+            this.timkiem.Text = "Tìm kiếm";
+            this.timkiem.UseVisualStyleBackColor = true;
+            this.timkiem.Click += new System.EventHandler(this.timkiem_Click);
+            // 
             // loaihang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.hienthi);
+            this.Controls.Add(this.tk);
+            this.Controls.Add(this.timkiem);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tenloaihang);
             this.Controls.Add(this.maloaihang);
             this.Controls.Add(this.text1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button6);
             this.Controls.Add(this.sua);
             this.Controls.Add(this.xoa);
             this.Controls.Add(this.them);
@@ -161,8 +183,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button sua;
         private System.Windows.Forms.Button xoa;
         private System.Windows.Forms.Button them;
@@ -172,5 +192,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button hienthi;
+        private System.Windows.Forms.TextBox tk;
+        private System.Windows.Forms.Button timkiem;
     }
 }

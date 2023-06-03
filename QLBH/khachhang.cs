@@ -187,6 +187,37 @@ namespace QLBH
             LoadData();
         }
 
+        private DataTable SearchData(string keyword)
+        {
+            DataTable result = new DataTable();
+
+            try
+            {
+                string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
+                using (SqlConnection cn = new SqlConnection(connectionString))
+                {
+                    cn.Open();
+
+                    // Thực hiện truy vấn tìm kiếm dữ liệu theo từ khóa
+                    string query = "SELECT * FROM khachhang WHERE makhachhang LIKE @Keyword OR Tencongty LIKE @Keyword OR tengiaodich LIKE @Keyword OR diachi LIKE @Keyword OR email LIKE @Keyword OR dienthoai LIKE @Keyword OR fax LIKE @Keyword";
+                    using (SqlCommand cmd = new SqlCommand(query, cn))
+                    {
+                        // Sử dụng tham số để tránh tình trạng SQL Injection
+                        cmd.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
+
+                        // Sử dụng SqlDataAdapter để lấy dữ liệu từ truy vấn
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        adapter.Fill(result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi nếu cần
+            }
+
+            return result;
+        }
         private void tencongty_TextChanged(object sender, EventArgs e)
         {
 
@@ -206,6 +237,28 @@ namespace QLBH
         {
             UpdateData();
             LoadData();
+        }
+
+        private void hienthi_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void tk_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timkiem_Click(object sender, EventArgs e)
+        {
+            string keyword = tk.Text;
+            DataTable result = SearchData(keyword);
+            dataGridView1.DataSource = result;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

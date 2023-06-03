@@ -249,7 +249,7 @@ namespace QLBH
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string keyword = textBox1.Text;
+            string keyword = tk.Text;
             DataTable result = SearchData(keyword);
             dataGridView1.DataSource = result;
 
@@ -263,6 +263,11 @@ namespace QLBH
         private void hienthi_Click(object sender, EventArgs e)
         {
             LoadData();
+        }
+
+        private void tk_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

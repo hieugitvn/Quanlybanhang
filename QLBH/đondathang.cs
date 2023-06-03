@@ -186,7 +186,38 @@ namespace QLBH
             MessageBox.Show("Thông tin đã được ghi vào cơ sở dữ liệu.");
             LoadData();
         }
+        // Phương thức thực hiện tìm kiếm dữ liệu
+        private DataTable SearchData(string keyword)
+        {
+            DataTable result = new DataTable();
 
+            try
+            {
+                string connectionString = @"Data Source=aff;Initial Catalog=Quanlybanhang;Integrated Security=True;";
+                using (SqlConnection cn = new SqlConnection(connectionString))
+                {
+                    cn.Open();
+
+                    // Thực hiện truy vấn tìm kiếm dữ liệu theo từ khóa
+                    string query = "SELECT * FROM dondathang WHERE sohoadon LIKE @Keyword OR makhachhang LIKE @Keyword OR manhanvien LIKE @Keyword OR ngaydathang LIKE @Keyword OR ngaygiaohang LIKE @Keyword OR ngaychuyenhang LIKE @Keyword OR noigiaohang LIKE @Keyword";
+                    using (SqlCommand cmd = new SqlCommand(query, cn))
+                    {
+                        // Sử dụng tham số để tránh tình trạng SQL Injection
+                        cmd.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
+
+                        // Sử dụng SqlDataAdapter để lấy dữ liệu từ truy vấn
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        adapter.Fill(result);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Xử lý lỗi nếu cần
+            }
+
+            return result;
+        }
         private void sohoadon_TextChanged(object sender, EventArgs e)
         {
 
@@ -220,6 +251,28 @@ namespace QLBH
         }
 
         private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hienthi_Click(object sender, EventArgs e)
+        {
+            LoadData();
+        }
+
+        private void tk_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timkiem_Click(object sender, EventArgs e)
+        {
+            string keyword = tk.Text;
+            DataTable result = SearchData(keyword);
+            dataGridView1.DataSource = result;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
