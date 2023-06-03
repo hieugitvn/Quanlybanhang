@@ -123,8 +123,9 @@ namespace Botbanhang
 
                 else
                 {
-                    reply = "/doanhthu để hiển thị doanh thu\n" +
-                        "hienthi +tên bảng để hiển thị dữ liệu bảng đó" ;
+                    reply = "Chào bạn,sử dụng lệnh dưới đây để tương tác với tôi\n" +
+                        "/doanhthu để hiển thị doanh thu\n" +
+                        "/hienthi +tên bảng để hiển thị dữ liệu bảng đó" ;
                 }
 
 

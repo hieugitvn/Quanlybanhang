@@ -51,6 +51,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.them = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.hienthi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -201,17 +203,17 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(710, 415);
+            this.button6.Location = new System.Drawing.Point(586, 415);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
             this.button6.TabIndex = 48;
-            this.button6.Text = "Đóng";
+            this.button6.Text = "Tìm kiếm";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(517, 415);
+            this.button3.Location = new System.Drawing.Point(280, 414);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 45;
@@ -221,7 +223,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(223, 415);
+            this.button2.Location = new System.Drawing.Point(138, 415);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 44;
@@ -250,11 +252,30 @@
             this.dataGridView1.TabIndex = 49;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(667, 415);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.TabIndex = 50;
+            // 
+            // hienthi
+            // 
+            this.hienthi.Location = new System.Drawing.Point(456, 415);
+            this.hienthi.Name = "hienthi";
+            this.hienthi.Size = new System.Drawing.Size(75, 23);
+            this.hienthi.TabIndex = 51;
+            this.hienthi.Text = "Hiển thị";
+            this.hienthi.UseVisualStyleBackColor = true;
+            this.hienthi.Click += new System.EventHandler(this.hienthi_Click);
+            // 
             // nhanvien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.hienthi);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button3);
@@ -312,5 +333,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button them;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button hienthi;
     }
 }

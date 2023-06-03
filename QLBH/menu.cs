@@ -43,8 +43,11 @@ namespace QLBH
 
         private void mặtHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.Hide();
             mathang mathang = new mathang(); //Khởi tạo đối tượng
            mathang.ShowDialog(); //Hiển thị
+           this.Show();
+
         }
 
         private void đơnHàngToolStripMenuItem_Click(object sender, EventArgs e)
